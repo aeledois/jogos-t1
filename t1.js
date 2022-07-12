@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 ctx.width = 600;
 ctx.height=600;
 
-var formiga = new function(){
+const formiga = new function(){
     this.image = new Image();
    
     this.image.src = "./ant.png"
@@ -71,7 +71,7 @@ var formiga = new function(){
     }  
 }
 
-var t =  new function(){
+const t =  new function(){
     this.x=0;
     this.y=300;
     this.w=50;
@@ -133,7 +133,7 @@ function desenhaFundo(){
     ctx.drawImage(fundo.img,0,0);  
 }
 
-var testaColisao = function() {
+const testaColisao = function() {
     if (t.x >= formiga.X) {
         if (t.y>= formiga.Y) {
             if (formiga.X+formiga.width>=t.x && formiga.Y+formiga.height>=t.y) {
@@ -186,7 +186,7 @@ document.addEventListener('keydown', event => {
      desenha();
 })
 
-var GameLoop = function(){
+const GameLoop = function(){
     desenha();
     setTimeout(GameLoop, 1000);
 }
